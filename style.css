@@ -540,7 +540,7 @@ header {
 .img-container {
     position: relative;
     width: 100%;
-    height: 230px;
+    height: 190px;
     cursor: pointer;
 }
 .img-container img {
@@ -548,7 +548,7 @@ header {
     top: 0;
     right: 0;
     width: 100%;
-    height: 230px;
+    height: 190px;
     object-fit: cover;
     border-radius: 12px;
     transition: all 0.4s ease;
@@ -600,49 +600,18 @@ header {
             align-items: center;
             margin-top: 12px;
         }
-        .quantity-box {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .quantity-box button {
-            width: 28px;
-            height: 28px;
-            font-size: 18px;
-            border: none;
-            background-color: #2e7d32;
-            color: white;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+.old-price {
+    font-size: 18px;
+    color: #8a9c8c;
+    text-decoration: line-through;
+}
 
-        .quantity-box button:hover {
-            background-color: #256528;
-        }
+.new-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f602c;
+}
 
-        .quantity-box span {
-            font-size: 18px;
-            font-weight: bold;
-            width: 24px;
-            text-align: center;
-            user-select: none;
-        }
-
-        .add-btn {
-            background-image: url(icons8-add-shopping-cart-48.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            width: 50px;  
-            height: 40px; 
-            background-color:#f0f9f0;
-            padding: 8px 14px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
         #messagesList li {
     color: #222; /* لون نص واضح */
     background-color: #e8f5e9; /* خلفية فاتحة */
@@ -731,9 +700,9 @@ header {
     
 
     .i {
-        float: right;
         margin-left: 15px;
         margin-right: 0;
+        display: inline-block !important; 
     }
     
     /* سكشن هوم  */
@@ -813,10 +782,7 @@ header {
         border-radius: 8px;
     }
     
-    .decor,
-    .succulent,
-    .climbing,
-    .indoor {
+    .decor, .succulent,.climbing,.indoor {
         width: 100% !important;
         height: 140px !important;
         object-fit: cover !important;
@@ -834,7 +800,6 @@ header {
         height: 200px;
     }
     
-    /* الفوتر */
     .footer {
         height: auto;
         padding: 30px 4%;
@@ -868,7 +833,6 @@ header {
 
 }
 
-/* للهواتف الصغيرة (480px) */
 @media (max-width: 480px) {
     /* الهيدر */
     header {
@@ -885,7 +849,7 @@ header {
         width: 85%;
     }
    .menu-btn {
-        margin-right: 60%; /* قللت من 70% لـ 60% */
+        margin-right: 60%;
         gap: 5px;
     }
 
@@ -896,21 +860,19 @@ header {
         .menu-btn:hover {
         transform: scale(1.3);
     }
-       /* إخفاء العناصر المطلوبة */
+
     .content p,
     .icons,
     .home-content p {
         display: none !important;
     }
-    
-    /* تحريك أيقونة .i إلى اليمين */
+
     .i {
         margin-left: 15px;
         margin-right: 0;
-        display: inline-block !important; /* تأكد أنها ظاهرة */
+        display: inline-block !important; 
 }
 
-    /* العناوين */
     .heading {
         font-size: 28px;
         height: 70px;
@@ -936,44 +898,35 @@ header {
         font-size: 16px;
         padding: 8px;
     }
-    
-    /* الأقسام */
-    .categories,
-    .best-sellers,
-    .product-section {
+
+    .categories, .best-sellers, .product-section {
         margin: 15px 10px;
         padding: 20px 15px;
     }
     
-    .cat-title,
-    .best-title {
+    .cat-title,.best-title {
         font-size: 24px;
         margin-bottom: 20px;
     }
     
-    .cat-container,
-    .best-container {
+    .cat-container,.best-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
     
-    .cat-box,
-    .best-box {
+    .cat-box,  .best-box {
         padding: 10px;
     }
     
-    .cat-box img,
-    .best-box img {
+    .cat-box img, .best-box img {
         height: 120px;
     }
     
-    .cat-box h3,
-    .best-box h3 {
+    .cat-box h3,    .best-box h3 {
         font-size: 18px;
         margin-top: 8px;
     }
-    
-    /* المنتجات */
+
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -998,7 +951,6 @@ header {
               .desc-text {
     display: none !important;
   }
-    /* تحسين أكثر للهواتف الصغيرة */
     .cat-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -1014,18 +966,7 @@ header {
         flex-direction: column;
         gap: 12px;
     }
-    
-    .quantity-box {
-        justify-content: center;
-    }
-    
-    .add-btn {
-        width: 100%;
-        height: 45px;
-        background-size: 28px;
-    }
-    
-    /* الفوتر */
+
     .footer {
         padding: 25px 15px;
     }
@@ -1042,10 +983,3 @@ header {
     }
 
 }
-
-
-
-
-
-
-
