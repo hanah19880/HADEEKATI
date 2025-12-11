@@ -148,15 +148,16 @@ header {
     transition: color 0.3s ease;
 }
 
+
+
 .home .content {
     display: grid;
-    gap: 5px;
-    margin-left: 50%;
-    margin-top: 30%;
+    gap: 15px;
 }
 
 .home h3 {
     font-size: 42px;
+    font-weight: 700;
     color: inherit;
     transition: transform 0.3s ease, color 0.3s ease;
     cursor: default;
@@ -186,7 +187,7 @@ header {
     background-color: #39853d;
     color: #ffffff;
     padding: 14px 30px;
-    border-radius: 40px;
+    border-radius: 8px;
     text-decoration: none;
     font-size: 22px;
     font-weight: 600;
@@ -494,28 +495,28 @@ header {
 
         /* سكشن البروداكت  */
         .product-section {
-    padding: 40px 4%;
+            padding: 70px 5%;
+            text-align: center;
+             padding: 30px ;
     background-color: rgba(255, 255, 255, 0.85);
-    margin: 40px auto;
+    margin: 30px ;
     border-radius: 12px;
     max-width: 1200px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        
+
         .product-section h2 {
-           text-align: center;
-    font-size: 36px;
-    color: #256928;
-    margin-bottom: 25px;
-     overflow: hidden; 
-        
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #2e7d32;
+            font-weight: bold;
         }
 
         .products-grid {
             display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 185px));
-        gap: 35px;
-    
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            justify-content: center;
+            gap: 25px;
         }
         .product-card {
            display: grid;
@@ -540,7 +541,7 @@ header {
 .img-container {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 230px;
     cursor: pointer;
 }
 .img-container img {
@@ -591,7 +592,7 @@ header {
             background-image: url(img/icons8-website-50.png);
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: right;
+            background-position: center;
         }
 
         .cart-row {
@@ -664,41 +665,32 @@ header {
     font-size: 14px;
 }
 
-/* ================ Media Queries ================ */
 
-/* للأجهزة اللوحية (768px) */
 @media (max-width: 768px) {
-    /* الهيدر */
     header {
         display: grid;
         grid-template-columns: auto 1fr auto;
         align-items: center;
     }
-       .icons {
+
+    .icons {
         display: none !important;
     }
-    .logo img {
-        width: 20px;
-        height: 20px;
-        justify-self: start;
-    }
-    
+
     .menu-btn {
         display: flex;
         flex-direction: column;
         gap: 6px;
         margin-right: 60%; 
         cursor: pointer;
-        justify-self: end;
+        justify-self: start;
         transition: transform 0.2s ease;
     }
 
     .menu-btn:hover {
         transform: scale(1.2);
     }
-    #menu-toggle:checked ~ .divbar {
-        display: block;
-    }
+
     .divbar {
         display: none;
         position: absolute;
@@ -711,180 +703,115 @@ header {
         box-shadow: 0 0 10px #0003;
         z-index: 999;
     }
-        
+
     .divbar ul {
         display: grid;
         gap: 15px;
         text-align: center;
     }
-    
+
     .divbar ul li a {
         font-size: 20px;
         padding: 8px 0;
-        text-align: center;
     }
 
-    .content p,
-    .home-content p {
-        display: none !important;
+    #menu-toggle:checked ~ .divbar {
+        display: block;
     }
-    
 
-    .i {
-        float: right;
-        margin-left: 15px;
-        margin-right: 0;
+    .logo img {
+        width: 130px; /* خففت شوي */
     }
-    
-    /* سكشن هوم  */
+
     .home {
         grid-template-columns: 1fr;
         text-align: right;
-
-    }
-        .home span {
-        font-size: 18px;
-        color: rgb(13, 52, 9);
-        max-width: 60%;
-        word-wrap: break-word;
-    }
-    
-.home h3 {
-    font-size: 35px;
-}
-    .heading {
-        font-size: 32px;
-        height: 80px;
-        padding-top: 20px;
-        margin: 15px;
     }
 
-    .row {
-        grid-template-columns: 1fr;
-        padding: 15px;
-        gap: 30px;
+    .home p {
+        display: none !important;
     }
-    
-    .video {
-        max-width: 100%;
-        height: 400px;
-    }
-    
-    .contents h2,
-    .contents h3 {
-        font-size: 26px;
-        padding-top: 20px;
-        text-align: center;
-    }
-    
-    .contents p {
-        font-size: 18px;
-        text-align: center;
-        padding: 10px;
-    }
-    .categories, .best-sellers, .product-section {
-        margin: 20px;
-        padding: 25px;
-    }
-    .cat-title,
-    .best-title {
-        font-size: 28px;
-    }
-    .cat-container, .best-container, .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-    }
-        .cat-container,  .products-grid {
+    .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
+        padding: 0 5px;
         gap: 20px;
     }
-    
-    
-    .cat-box, .product-card {
-        width: 100%;
-        max-width: 220px;
-        margin: 0 auto;
+    .product-card {
+        max-width: 100%; /* الكارد ياخذ العرض كامل */
     }
-    
-    .cat-box img .product-card img {
-        height: 140px;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-    
-    .decor,
-    .succulent,
-    .climbing,
-    .indoor {
-        width: 100% !important;
-        height: 140px !important;
-        object-fit: cover !important;
-        display: block;
-        margin: 0 auto;
-    }
-    
-    .cat-box h3 {
-        font-size: 18px;
-        margin-top: 10px;
-        text-align: center;
+    .cat-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
     }
 
-    .img-container {
-        height: 200px;
+    .best-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
-    
-    /* الفوتر */
+
+    .home-content p {
+        display: none !important;
+    }
+
+    .home span {
+        font-size: 18px;
+        color: rgb(13, 52, 9);
+        max-width: 50%;
+        word-wrap: break-word;
+    }
+
     .footer {
-        height: auto;
-        padding: 30px 4%;
+        text-align: center;
+        padding: 20px 5%;
     }
-    
+
     .footer-container {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
     }
-    
-    .footer-info,
-    .footer-contact {
-        text-align: center;
-    }
-    
-    .contact-form {
-        max-width: 100%;
-    }
-    
-    /* سكشن 5 */
-    .home1 {
-        padding: 20px 20px;
-    }
-    
-    .home-content h1 {
-        font-size: 30px;
-    }
-              .desc-text {
-    display: none !important;
-  }
 
+    .footer h3 {
+        font-size: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .footer .btn {
+        width: 100%;
+    }
+
+   #messagesList li {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    #messagesList li .delete-btn {
+        font-size: 13px;
+        padding: 5px 10px;
+        margin-top: -16px;
+    }
 }
 
-/* للهواتف الصغيرة (480px) */
 @media (max-width: 480px) {
-    /* الهيدر */
+    body {
+        font-size: 13px;
+    }
+
     header {
         grid-template-columns: auto 1fr auto;
         height: 70px;
         padding: 0 10px;
     }
 
-    .logo img {
-        width: 40px;
+    header .logo img {
+        width: 100px;
     }
-    
-    .divbar {
-        width: 85%;
-    }
-   .menu-btn {
+
+    .menu-btn {
         margin-right: 60%; /* قللت من 70% لـ 60% */
         gap: 5px;
     }
@@ -893,137 +820,52 @@ header {
         width: 25px;
         height: 3px;
     }
-        .menu-btn:hover {
+
+    .menu-btn:hover {
         transform: scale(1.3);
     }
-       /* إخفاء العناصر المطلوبة */
-    .content p,
-    .icons,
-    .home-content p {
-        display: none !important;
-    }
-    
-    /* تحريك أيقونة .i إلى اليمين */
-    .i {
-        margin-left: 15px;
-        margin-right: 0;
-        display: inline-block !important; /* تأكد أنها ظاهرة */
-}
 
-    /* العناوين */
-    .heading {
-        font-size: 28px;
-        height: 70px;
-        padding-top: 15px;
-        margin: 10px;
-    }
-    .video {
-        height: 300px;
-    }
-    
-    .video h3 {
-        font-size: 18px;
+    .divbar {
+        width: 70%;
+        top: 65px;
+        left: 0;
         padding: 10px;
+        background-color: rgba(210, 190, 160, 0.95);
+        border-radius: 10px;
+        box-shadow: -3px 0 12px rgba(0,0,0,0.25);
     }
-    
-    .contents h2,
-    .contents h3 {
-        font-size: 24px;
-        padding-top: 15px;
-    }
-    
-    .contents p {
-        font-size: 16px;
-        padding: 8px;
-    }
-    
-    /* الأقسام */
-    .categories,
-    .best-sellers,
-    .product-section {
-        margin: 15px 10px;
-        padding: 20px 15px;
-    }
-    
-    .cat-title,
-    .best-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    
-    .cat-container,
-    .best-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    
-    .cat-box,
-    .best-box {
-        padding: 10px;
-    }
-    
-    .cat-box img,
-    .best-box img {
-        height: 120px;
-    }
-    
-    .cat-box h3,
-    .best-box h3 {
+
+    .divbar ul li a {
         font-size: 18px;
-        margin-top: 8px;
+        padding: 6px 0;
     }
-    
-    /* المنتجات */
+
+     .cat-container, .best-container {
+        grid-template-columns: 1fr;
+    }
     .products-grid {
         grid-template-columns: 1fr;
+        padding: 0 5px;
         gap: 15px;
     }
-    
     .product-card {
-        padding: 12px;
+        max-width: 100%;
     }
-    
-    .img-container {
-        height: 180px;
-    }
-    
-    .product-card h3 {
-        font-size: 20px;
-        margin: 10px 0;
-    }
-              .desc-text {
+      .desc-text {
     display: none !important;
   }
-    /* تحسين أكثر للهواتف الصغيرة */
-    .cat-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 0 10px;
-    }
-    
-    .cat-box {
-        max-width: 160px;
-        padding: 8px;
-    }
-   
-    .cart-row {
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .quantity-box {
-        justify-content: center;
-    }
-    
-    .add-btn {
-        width: 100%;
-        height: 45px;
-        background-size: 28px;
-    }
-    
-    /* الفوتر */
+
+  .i {
+    display: inline-block !important; /* تأكد أنها ظاهرة */
+  }
+
     .footer {
-        padding: 25px 15px;
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+
+    .footer h3 {
+        font-size: 18px;
     }
 
     .contact-form input,
@@ -1031,11 +873,19 @@ header {
         font-size: 14px;
         padding: 8px;
     }
-    
+
     .footer .btn {
         width: 100%;
-        text-align: center;
     }
 
-}
+    #messagesList li {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 
+    #messagesList li .delete-btn {
+        font-size: 11px;
+        padding: 4px 8px;
+        margin-top: -14px;
+    }
+}
